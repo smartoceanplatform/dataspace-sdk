@@ -1,6 +1,7 @@
 import requests
 
 import client_config
+import sample_datasources
 
 
 class DataSpaceClient:
@@ -21,12 +22,14 @@ class DataSpaceClient:
 
         return response
 
-    def virtualnode_get_latest(self):
+    def get_latest(self, datasource):
 
-        response = self.send_request('v1/smartocean/virtualsensorhub/sensors/latest')
+        response = self.send_request(f'v1/smartocean/{sample_datasources.HVLVIRTUAL}/sensors/latest')
 
         print(response.status_code)
         print(response.text)
+
+        return response.text
 
 
 if __name__ == '__main__':
@@ -36,7 +39,7 @@ if __name__ == '__main__':
 
     client = DataSpaceClient(dataspace_config)
 
-    client.virtualnode_get_latest()
+    client.get_latest("virtualsensorhub")
 
 
 
