@@ -3,6 +3,7 @@ import os
 from decouple import config
 import yaml
 
+
 class DataSpaceConfig:
     def __init__(self, baseurl, api_key):
         self.BASEURL = baseurl
@@ -12,8 +13,10 @@ class DataSpaceConfig:
         return ''.join((f'DataSpace Configuration: \n',
                         f'BASEURL: {self.BASEURL}'))
 
+
 class DataSpaceConfigurationException(Exception):
     pass
+
 
 def get_dataspace_config(config_file: str) -> DataSpaceConfig:
 
@@ -36,6 +39,7 @@ def get_dataspace_config(config_file: str) -> DataSpaceConfig:
 
     return dataspace_config
 
+
 def get_dataspace_configfile(description: str) -> str:
     parser = argparse.ArgumentParser(description=description)
     parser.add_argument("--configfile", required=True, help="Path to the config file")
@@ -45,3 +49,4 @@ def get_dataspace_configfile(description: str) -> str:
         raise DataSpaceConfigurationException(f"Error: The configfile '{args.configfile}' does not exist.")
 
     return args.configfile
+
