@@ -27,6 +27,8 @@ The code is to be used as a starting point for the implementation of the client 
 
 A configuration file that can be used for the SmartOcean data space service can be found in the configs folder.
 
+The data sources are currently available on the SmartOcean platform for demonstration purposes can be found in the `sample_datasources.py` file.
+
 ## Configuration and credentials        
 
 The configuration file provided as on the command-line must contain the following information:
