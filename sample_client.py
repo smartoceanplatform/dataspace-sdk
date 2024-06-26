@@ -23,7 +23,7 @@ class DataSpaceClient:
 
     def virtualnode_get_latest(self):
 
-        response = self.send_request('smartocean/testing/virtualsensorhub/latest')
+        response = self.send_request('v1/smartocean/virtualsensorhub/sensors/latest')
 
         print(response.status_code)
         print(response.text)
