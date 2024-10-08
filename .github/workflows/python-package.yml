@@ -76,7 +76,7 @@ jobs:
         pip install setuptools wheel twine  
         poetry lock
         poetry build
-        twine upload --repository testpypi dist/*
+        twine upload  --verbose --repository testpypi dist/*
 
 
 
