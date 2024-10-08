@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "sfisop-dataspace-sdk"
-version = "0.1.0"
+version = "0.1.1"
 description = ""
 authors = ["Yo581515 <581515@stud.hvl.no>"]
 readme = "README.md"
