@@ -22,4 +22,4 @@ def test_dataspace_config():
     print(response_period.status_code)
     print(response_period.text)
 
-    assert response_latest is not None & response_period is not None
+    assert response_latest is not None and response_period is not None
