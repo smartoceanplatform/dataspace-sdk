@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "sfisop-dataspace-sdk"
+version = "0.1.0"
+description = ""
+authors = ["Yo581515 <581515@stud.hvl.no>"]
+readme = "README.md"
+packages = [{include = "sfisop", from = "src"}]
+
+[tool.poetry.dependencies]
+python = ">=3.9,<4.0.0"
+certifi = "2024.2.2"
+charset-normalizer = "3.3.2"
+idna = "3.6"
+python-decouple = "3.8"
+pyyaml = "6.0.1"
+requests = "2.31.0"
+urllib3 = "2.2.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
