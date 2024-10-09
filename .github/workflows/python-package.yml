@@ -70,13 +70,21 @@ jobs:
         export PYTHONPATH=$(pwd)/src
         pytest -sv
 
+
+    - name: Install twine
+      run: |
+        pip install setuptools wheel twine  
+        echo 'pip -V'
+        pip -V
+        pip list
+
+
     - name: Publish to PyPI
       continue-on-error: true
       run: |
-        pip install setuptools wheel twine  
         poetry lock
         poetry build
-        twine upload  --verbose --repository testpypi dist/*
+        twine upload --repository testpypi dist/*
 
 
 
