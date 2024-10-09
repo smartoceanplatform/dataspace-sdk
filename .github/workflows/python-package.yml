@@ -91,7 +91,7 @@ jobs:
 
 
 
-  test_sfisop_datamodels_package:
+  test_sfisop_dataspace_sdk_package:
     needs: build
     runs-on: ubuntu-latest
 
