@@ -2,8 +2,8 @@ import requests
 import datetime
 import urllib
 
-import client_config
-import sample_datasources
+from . import client_config
+from . import sample_datasources
 
 
 class DataSpaceClient:
