@@ -50,7 +50,7 @@ To do this install ``poetry`` and execute the following commands:
 
 ```bash
 poetry build
-pip install dist/sfisop_dataspace_sdk*.whl
+pip install dist/ sfisop_dataspace_sdk-<version>-py3-none-any.whl
 ```
 
 ## Sample Client Code
