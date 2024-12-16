@@ -1,5 +1,7 @@
 # DataSpace Service Client SDK
 
+The Swagger documentation for the data space service is available via: https://dataspaceservice.jollywater-00619340.westus2.azurecontainerapps.io/docs
+
 ## Local installation with pip
 
 If you want to work on this module to test, debug, or develop, this module can be

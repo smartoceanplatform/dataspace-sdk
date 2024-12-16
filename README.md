@@ -4,7 +4,7 @@ Basic client library for accessing the SmartOcean data space service to retrieve
 
 ## Data Space Service REST API
 
-The SmartOcean dataspace service provides a REST API. The Swagger documentation is available via: https://dataspaceservice.jollywater-00619340.westus2.azurecontainerapps.io/docs
+The SmartOcean dataspace service provides a REST API. 
 
 # Installing as a module
 
