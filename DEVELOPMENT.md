@@ -1,7 +1,10 @@
-## Local installation
+# DataSpace Service Client SDK
+
+## Local installation with pip
+
 If you want to work on this module to test, debug, or develop, this module can be
 installed locally on your system as source code. The path to the folder ``src`` needs to be in 
-your PYTHONPATH. Then the module can be accessed from client code using:
+your `PYTHONPATH`. Then the module can be accessed from client code using:
 
 ```python
 import sfisop.dataspace_sdk

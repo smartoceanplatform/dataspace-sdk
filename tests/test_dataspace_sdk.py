@@ -1,25 +1,48 @@
-from sfisop.dataspace_sdk.sample_client import DataSpaceClient
-from sfisop.dataspace_sdk.client_config import get_dataspace_config
-from sfisop.dataspace_sdk import sample_datasources 
-import requests
+from sfisop.dataspace_sdk.client import DataSpaceClient
+from sfisop.dataspace_sdk.config import get_dataspace_config
+from sfisop.dataspace_sdk import sop_datasources
+
 import datetime
+import json
+
+import unittest
 
 
+class DataSpaceSDKTest(unittest.TestCase):
 
-def test_dataspace_config():
-    config_file = 'configs/config-dataspace-prod.yml'
-    dataspace_config = get_dataspace_config(config_file)
-    client = DataSpaceClient(dataspace_config)
+    def setUp(self):
+        config_file = 'configs/config-dataspace-prod.yml'
+        self.dataspace_config = get_dataspace_config(config_file)
+        self.data_sources = ['virtualsensorhub', 'austevollsouth', 'austevollsouth', 'wsenseaustevoll1', 'wsenseaustevoll2']
 
-    response_latest = client.get_latest(sample_datasources.HVLVIRTUAL)
-    print(response_latest.status_code)
-    print(response_latest.text)
+    def test_get_latest(self):
+        client = DataSpaceClient(self.dataspace_config)
 
-    start_time = datetime.datetime(2024, 6, 1, 0, 0, 0)
-    end_time = datetime.datetime(2024, 6, 7, 0, 0, 0)
+        for datasource in self.data_sources:
 
-    response_period = client.get_period(sample_datasources.HVLVIRTUAL, start_time, end_time)
-    print(response_period.status_code)
-    print(response_period.text)
+            response = client.get_latest(datasource)
 
-    assert response_latest is not None and response_period is not None
+            self.assertIsNotNone(response)
+
+            if response.status_code != 200:
+                print(f'{datasource}[{response.status_code}]')
+            else:
+                ts_data_dict = json.loads(response.text)
+
+                ts = ts_data_dict['data']['time']
+                print(f'{datasource} [{ts}]')
+
+    def test_get_period(self):
+        client = DataSpaceClient(self.dataspace_config)
+
+        start_time = datetime.datetime(2024, 6, 1, 0, 0, 0)
+        end_time = datetime.datetime(2024, 6, 7, 0, 0, 0)
+
+        response = client.get_period(sop_datasources.HVLVIRTUAL, start_time, end_time)
+
+        self.assertIsNotNone(response)
+        self.assertEqual(response.status_code, 200)
+
+
+if __name__ == "__main__":
+    unittest.main()

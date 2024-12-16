@@ -19,19 +19,45 @@ pip install sfisop-dataspace-sdk
 
 # Sample Client Code
 
-A sample implementation of the client-side code is provided in the `sample_client.py` file. 
+A sample implementation of the client-side code is provided in the `main.py` file. 
+
+```python
+import datetime
+
+from sfisop.dataspace_sdk.client import DataSpaceClient
+from sfisop.dataspace_sdk.config import get_dataspace_config, get_dataspace_configfile
+from sfisop.dataspace_sdk import sop_datasources as data_sources
+
+if __name__ == '__main__':
+
+    config_file = get_dataspace_configfile("DataSpace Configuration")
+    dataspace_config = get_dataspace_config(config_file)
+
+    client = DataSpaceClient(dataspace_config)
+
+    response_latest = client.get_latest(data_sources.HVLVIRTUAL)
+    print(response_latest.status_code)
+    print(response_latest.text)
+
+    start_time = datetime.datetime(2024, 6, 1, 0, 0, 0)
+    end_time = datetime.datetime(2024, 6, 7, 0, 0, 0)
+
+    response_period = client.get_period(data_sources.HVLVIRTUAL, start_time, end_time)
+    print(response_period.status_code)
+    print(response_period.text)
+```
 
 It can be executed as:
 
 ```bash
-python sample_client.py <path-to-configuration-file>
+python client.py <path-to-configuration-file>
 ```
 
 The code is to be used as a starting point for the implementation of the client applications.
 
 A configuration file that can be used for the SmartOcean data space service can be found in the configs folder.
 
-The data sources are currently available on the SmartOcean platform for demonstration purposes can be found in the `sample_datasources.py` file.
+The data sources are currently available on the SmartOcean platform for demonstration purposes can be found in the `sop_datasources.py` file.
 
 # Configuration and credentials        
 
