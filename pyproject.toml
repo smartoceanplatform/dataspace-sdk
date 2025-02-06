@@ -4,6 +4,7 @@ version = "1.0.1"
 description = "SDK for the SmartOcean Platform Data Space Service"
 authors = ["Smart Ocean Consotrium"]
 readme = "README.md"
+license = "MIT"
 packages = [{include = "sfisop", from = "src"}]
 
 [tool.poetry.dependencies]

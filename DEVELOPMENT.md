@@ -2,6 +2,17 @@
 
 The Swagger documentation for the data space service is available via: https://dataspaceservice.jollywater-00619340.westus2.azurecontainerapps.io/docs
 
+# Installing as a module
+
+The module is part of a collection of client modules for the SFI Smart Ocean platform under the sfisop namespace on ``pypi.org``.
+
+To use the distributed module on pypi install this and other modules you may require for your Smart Ocean client
+using pip:
+
+```bash
+pip install sfisop-dataspace-sdk
+```
+
 ## Local installation with pip
 
 If you want to work on this module to test, debug, or develop, this module can be
