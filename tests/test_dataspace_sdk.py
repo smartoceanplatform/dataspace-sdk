@@ -13,7 +13,7 @@ class DataSpaceSDKTest(unittest.TestCase):
     def setUp(self):
         config_file = 'configs/config-dataspace-prod.yml'
         self.dataspace_config = get_dataspace_config(config_file)
-        self.data_sources = ['virtualsensorhub', 'austevollsouth', 'austevollsouth', 'wsenseaustevoll1', 'wsenseaustevoll2']
+        self.data_sources = ['virtualsensorhub', 'austevollsouth', 'austevollnorth', 'wsenseaustevoll1', 'wsenseaustevoll2']
 
     def test_get_latest(self):
         client = DataSpaceClient(self.dataspace_config)

@@ -6,17 +6,6 @@ Basic client library for accessing the SmartOcean data space service to retrieve
 
 The SmartOcean dataspace service provides a REST API. 
 
-# Installing as a module
-
-The module is part of a collection of client modules for the SFI Smart Ocean platform under the sfisop namespace on ``pypi.org``.
-
-To use the distributed module on pypi install this and other modules you may require for your Smart Ocean client
-using pip:
-
-```bash
-pip install sfisop-dataspace-sdk
-```
-
 # Sample Client Code
 
 A sample implementation of the client-side code is provided in the `main.py` file. 
